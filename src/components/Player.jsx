@@ -57,6 +57,9 @@ export default function Player({ radio }) {
       <section>
         <audio ref={audio}>
             <source type="audio/mpeg" src={`https://ice.radio-pirate.com/${radio.url}`} />
+            <source type="audio/ogg" src={`https://ice.radio-pirate.com/${radio.url}`} />
+            <source type="audio/aac" src={`https://ice.radio-pirate.com/${radio.url}`} />
+            Your browser does not support the audio element.
         </audio>
         <h2>{radio.name}</h2>
         <ThreeCube />
