@@ -55,10 +55,9 @@ export default function Player({ radio }) {
   return (
     <>
       <section>
-        <audio
-          ref={audio}
-          src={`https://ice.radio-pirate.com/${radio.url}`}
-        ></audio>
+        <audio ref={audio}>
+            <source type="audio/mpeg" src={`https://ice.radio-pirate.com/${radio.url}`} />
+        </audio>
         <h2>{radio.name}</h2>
         <ThreeCube />
         <p>{song}</p>
