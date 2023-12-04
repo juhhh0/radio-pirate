@@ -4,6 +4,7 @@ import play from "../assets/play.svg"
 import pause from "../assets/pause.svg"
 import { useState } from "react"
 import { useEffect } from "react"
+import ThreeCube from "./ThreeCube"
 
 export default function Player({radio}){
     const [playing, setPlaying] = useState(false)
@@ -23,6 +24,7 @@ export default function Player({radio}){
         <section>
             <audio ref={audio} src={`https://ice.radio-pirate.com/${radio.url}`}></audio>
             <h2>{radio.name}</h2>
+            <ThreeCube/>
            <img onClick={toggleAudio} src={playing? pause : play} />
         </section>
         </>

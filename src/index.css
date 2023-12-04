@@ -53,11 +53,17 @@ section{
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  padding: 50px;
+}
+
+section > canvas {
+  flex: 1;
 }
 
 section > img{
   width: 80px;
   height: 80px;
+  cursor: pointer;
 }
 
 nav > ul {
@@ -78,7 +84,6 @@ nav > ul > li:hover, .current{
 }
 
 
-
 @media screen and (max-width: 970px) {
   main{
     flex-direction: column;
@@ -87,7 +92,7 @@ nav > ul > li:hover, .current{
   nav{
     height: unset;
     padding: 10px 20px;
-    gap: 40px;
+    gap: 20px;
     align-items: space-between;
   }
 
@@ -101,6 +106,6 @@ nav > ul > li:hover, .current{
 
   section{
     justify-content: space-between;
-    padding: 20px 0 100px;
+    padding: 20px 0;
   }
 }
