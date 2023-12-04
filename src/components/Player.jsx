@@ -55,7 +55,7 @@ export default function Player({ radio }) {
   return (
     <>
       <section>
-        <audio ref={audio}>
+        <audio controls={true} ref={audio}>
             <source type="audio/mpeg" src={`https://ice.radio-pirate.com/${radio.url}`} />
             <source type="audio/ogg" src={`https://ice.radio-pirate.com/${radio.url}`} />
             <source type="audio/aac" src={`https://ice.radio-pirate.com/${radio.url}`} />
