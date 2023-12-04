@@ -21,7 +21,7 @@ export default function Player({radio}){
     return (
         <>
         <section>
-            <audio ref={audio} src={radio.url}></audio>
+            <audio ref={audio} src={`https://ice.radio-pirate.com/${radio.url}`}></audio>
             <h2>{radio.name}</h2>
            <img onClick={toggleAudio} src={playing? pause : play} />
         </section>

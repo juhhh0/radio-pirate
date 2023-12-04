@@ -71,20 +71,13 @@ nav > ul > li {
   width: fit-content;
 }
 
-nav > ul > li:hover{
+nav > ul > li:hover, .current{
   text-decoration: underline;
   text-underline-offset: 5px;
   cursor: pointer;
 }
 
-.play{
-    display : inline-block;
-    height : 0;
-    width : 0;
-    border-top : 87px solid transparent;
-    border-bottom : 87px solid transparent;
-    border-left : 150px solid black;  
-}
+
 
 @media screen and (max-width: 970px) {
   main{

@@ -7,7 +7,7 @@ function App() {
   return (
     <>
     <main>
-      <Navbar setRadio={setRadio}/>
+      <Navbar setRadio={setRadio} radio={radio}/>
       <Player radio={radio}/>
     </main>
     </>
