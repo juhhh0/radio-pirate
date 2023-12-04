@@ -69,7 +69,7 @@ section > img{
 section > p {
   position: relative;
   top: -20px;
-  font-family: 'Noto Sans JP', sans-serif;}
+}
 
 nav > ul {
   display: flex;
