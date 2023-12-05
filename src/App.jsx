@@ -4,11 +4,12 @@ import Player from "./components/Player"
 
 function App() {
   const [radio, setRadio] = useState({name: "water-lily.mp3", url: "water"})
+
   return (
     <>
     <main>
-      <Navbar setRadio={setRadio} radio={radio}/>
-      <Player radio={radio}/>
+      <Navbar />
+      <Player/>
     </main>
     </>
   )

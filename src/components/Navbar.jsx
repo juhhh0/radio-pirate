@@ -13,7 +13,7 @@ export default function Navbar({setRadio, radio}){
         <h1>radio_pirate 🏴</h1>
         <ul>
             { radios.map((item, index) => (
-                <NavbarItem key={index} radio={radio} setRadio={setRadio} name={item.name} url={item.url}/>
+                <NavbarItem key={index} name={item.name} url={item.url}/>
             ))
             }
         </ul>
