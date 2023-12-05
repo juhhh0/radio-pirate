@@ -15,14 +15,21 @@ export default function Player({ radio }) {
     audio.current.paused ? audio.current.play() : audio.current.pause();
     setPlaying((prev) => !prev);
   };
-
+  
   useEffect(() => {
-    setPlaying(false);
+    // audio.current.pause()
+    audio.current.load()
+    if(playing) {
+      audio.current.play()
+      setPlaying(true)
+    }else{
+      setPlaying(false)
+    }
+    // setPlaying(false);
   }, [radio]);
 
   useEffect(() => {
     const fetchData = async () => {
-        console.log("fetch !")
       try {
         const response = await fetch("https://ice.radio-pirate.com/status-json.xsl");
 
@@ -57,8 +64,8 @@ export default function Player({ radio }) {
       <section>
         <audio ref={audio}>
             <source type="audio/mpeg" src={`https://ice.radio-pirate.com/${radio.url}`} />
-            <source type="audio/ogg" src={`https://ice.radio-pirate.com/${radio.url}`} />
-            <source type="audio/aac" src={`https://ice.radio-pirate.com/${radio.url}`} />
+            {/* <source type="audio/ogg" src={`https://ice.radio-pirate.com/${radio.url}`} />
+            <source type="audio/aac" src={`https://ice.radio-pirate.com/${radio.url}`} /> */}
             Your browser does not support the audio element.
         </audio>
         <h2>{radio.name}</h2>
