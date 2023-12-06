@@ -37,6 +37,13 @@ const Cube = () => {
       onClick={() => {
         setPlaying((prev) => !prev);
       }}
+      onPointerOver={() => {
+        document.body.style.cursor = 'pointer';
+        // document.body.style.cursor = "url('/play.cur'), pointer";
+      }}
+      onPointerOut={() => {
+        document.body.style.cursor = 'auto';
+      }}
     >
       <boxGeometry args={[1, 2, 1]} />
       <meshBasicMaterial color={0x000000} />
