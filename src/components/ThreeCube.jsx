@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
+import { useEffect } from "react";
 
 const Cube = () => {
   const cubeRef = useRef();
@@ -30,6 +31,13 @@ const Cube = () => {
     }
   });
 
+  useEffect(()=>{
+    if(document.body.style.cursor != 'auto'){
+      document.body.style.cursor = `url(${playing ? '/pause.cur' : '/play.cur'}) 12 8, pointer`;
+    }
+
+  }, [playing])
+
   return (
     <mesh
       ref={cubeRef}
@@ -38,8 +46,8 @@ const Cube = () => {
         setPlaying((prev) => !prev);
       }}
       onPointerOver={() => {
-        document.body.style.cursor = 'pointer';
-        // document.body.style.cursor = "url('/play.cur'), pointer";
+        // document.body.style.cursor = 'pointer';
+        document.body.style.cursor = `url(${playing ? '/pause.cur' : '/play.cur'}) 12 8, pointer`;
       }}
       onPointerOut={() => {
         document.body.style.cursor = 'auto';
