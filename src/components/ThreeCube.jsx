@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
 import { useEffect } from "react";
@@ -38,6 +38,10 @@ const Cube = () => {
 
   }, [playing])
 
+  useThree(({camera}) => {
+    camera.position.z = 3;
+  });
+
   return (
     <mesh
       ref={cubeRef}
@@ -61,7 +65,7 @@ const Cube = () => {
 
 const ThreeCube = () => {
   return (
-    <Canvas>
+    <Canvas className="canvas">
       <Cube />
     </Canvas>
   );

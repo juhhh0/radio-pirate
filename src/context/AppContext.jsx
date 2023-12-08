@@ -6,7 +6,7 @@ export const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
   const audio = useRef(null);
-  const [radio, setRadio] = useState({ name: "water-lily.mp3", url: "water" });
+  const [radio, setRadio] = useState({ name: "water_lily.mp3", url: "water" });
   const [playing, setPlaying] = useState(false);
   const [playlists, setPlaylists] = useState({});
 

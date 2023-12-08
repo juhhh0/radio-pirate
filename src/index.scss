@@ -1,0 +1,143 @@
+* {
+  font-family: "Space Mono", monospace;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+main{
+  height: 100svh;
+  text-align: center;
+
+
+  h1{
+    font-size: 24px;
+    padding: 15px 0;
+    text-wrap: nowrap;
+  }
+
+  ul{
+    padding-top: 15px;
+    position: relative;
+    z-index: 10;
+
+    .current, li:hover{
+      text-decoration: underline;
+      text-underline-offset: 5px;
+      cursor: pointer;
+    }
+  }
+
+  h2{
+    display: none;
+  }
+
+  .canvas{
+    max-height: 60vh;
+    top: -40px;
+  }
+
+  .player{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15px;
+    gap: 10px;
+
+    img{
+      width: 70px;
+    }
+  }
+
+  @media screen and (min-width: 500px) {
+    h1, ul{
+      display: inline-flex;
+      gap: 20px;
+    }
+
+    h1{
+      margin-right: 40px;
+    }
+
+    .canvas{
+      top: 0px;
+      max-height: 70vh;
+      
+    }
+    
+  }
+
+  @media screen and (min-width: 970px) {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+
+    h1, h2, ul{
+      display: flex;
+      justify-content: center;
+      align-items: center;   
+    }
+
+    h1{
+      margin-right: unset;
+      padding-left: 30px;
+      grid-area: 1 / 1 / 2 / 2;
+    }
+
+    ul{
+      grid-area: 2 / 1 / 5 / 2;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    h2{
+      grid-area: 1 / 2 / 2 / 6; 
+    }
+  
+    .canvas{
+      grid-area: 2 / 2 / 5 / 6;
+      max-height: unset
+    }
+
+    .player{
+      position: static;
+      grid-area: 5 / 2 / 6 / 6;
+    }
+  }
+}

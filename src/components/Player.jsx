@@ -21,12 +21,12 @@ export default function Player() {
 
   return (
     <>
-      <section>
         <h2>{radio.name}</h2>
         <ThreeCube />
-        <p>{song}</p>
-        <img onClick={togglePlaying} src={playing ? pause : play} />
-      </section>
+        <div className="player">
+          <p>{song}</p>
+          <img onClick={togglePlaying} src={playing ? pause : play} />
+        </div>
     </>
   );
 }
