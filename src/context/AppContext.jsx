@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useRef } from "react";
 import { createContext, useState } from "react";
+import {isMobile, isSafari} from "react-device-detect";
 
 export const AppContext = createContext();
 
@@ -53,6 +54,8 @@ export const AppContextProvider = ({ children }) => {
     return () => clearInterval(refetch);
   }, []);
 
+  const src = `https://ice.radio-pirate.com/${radio.url}${isMobile || isSafari ? "-mp3" : ""}`
+
   return (
     <AppContext.Provider
       value={{
@@ -66,21 +69,16 @@ export const AppContextProvider = ({ children }) => {
       <audio ref={audio}>
         <source
           type="audio/mpeg"
-          src={`https://ice.radio-pirate.com/${radio.url}`}
+          src={src}
         />
         <source
           type="audio/ogg"
-          src={`https://ice.radio-pirate.com/${radio.url}`}
+          src={src}
         />
         <source
           type="audio/aac"
-          src={`https://ice.radio-pirate.com/${radio.url}`}
+          src={src}
         />
-         <source
-          type="audio/mpeg"
-          src={`https://ice.radio-pirate.com/${radio.url}-mp3`}
-        />
-
         Your browser does not support the audio element.
       </audio>
       {children}
