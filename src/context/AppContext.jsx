@@ -76,6 +76,11 @@ export const AppContextProvider = ({ children }) => {
           type="audio/aac"
           src={`https://ice.radio-pirate.com/${radio.url}`}
         />
+         <source
+          type="audio/mpeg"
+          src={`https://ice.radio-pirate.com/${radio.url}-mp3`}
+        />
+
         Your browser does not support the audio element.
       </audio>
       {children}
