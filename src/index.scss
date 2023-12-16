@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+a{
+  color: currentColor;
+  text-decoration: none;
+}
+
 button {
   border: none;
   margin: 0;
@@ -29,6 +34,10 @@ button {
   -webkit-appearance: none;
 }
 
+input{
+  padding: 5px 10px
+}
+
 ul,
 ol,
 li {
@@ -42,14 +51,32 @@ main{
 
   h1{
     font-size: 24px;
-    padding: 15px 0;
+    padding: 15px 0 0 15px;
     text-wrap: nowrap;
+    white-space: nowrap;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+
+  .contact{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    p{
+      display: none;
+    }
+
   }
 
   ul{
     padding-top: 15px;
     position: relative;
     z-index: 10;
+
+    li{
+      padding: 5px 0;
+    }
 
     .current, li:hover{
       text-decoration: underline;
@@ -82,15 +109,17 @@ main{
       width: 70px;
     }
   }
+  
 
   @media screen and (min-width: 500px) {
-    h1, ul{
-      display: inline-flex;
-      gap: 20px;
-    }
 
     h1{
       margin-right: 40px;
+    }
+
+    ul{
+    display: inline-flex;
+    gap: 10px;
     }
 
     .canvas{
@@ -116,6 +145,7 @@ main{
 
     h1{
       margin-right: unset;
+      margin-bottom: 0;
       padding-left: 30px;
       grid-area: 1 / 1 / 2 / 2;
     }
@@ -124,6 +154,25 @@ main{
       grid-area: 2 / 1 / 5 / 2;
       flex-direction: column;
       gap: 30px;
+    }
+
+    .contact{
+      grid-area: 5 / 1 / 6 / 2;
+      position:static;
+      display: flex;
+      flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15px;
+    gap: 15px;
+
+      p{
+        display: block;
+      }
+
+      img{
+        width: 50px;
+      }
     }
 
     h2{

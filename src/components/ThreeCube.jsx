@@ -31,12 +31,6 @@ const Cube = () => {
     }
   });
 
-  useEffect(()=>{
-    if(document.body.style.cursor != 'auto'){
-      document.body.style.cursor = `url(${playing ? '/pause.cur' : '/play.cur'}) 12 8, pointer`;
-    }
-
-  }, [playing])
 
   useThree(({camera}) => {
     camera.position.z = 3;
@@ -50,8 +44,7 @@ const Cube = () => {
         setPlaying((prev) => !prev);
       }}
       onPointerOver={() => {
-        // document.body.style.cursor = 'pointer';
-        document.body.style.cursor = `url(${playing ? '/pause.cur' : '/play.cur'}) 12 8, pointer`;
+        document.body.style.cursor = `pointer`;
       }}
       onPointerOut={() => {
         document.body.style.cursor = 'auto';
