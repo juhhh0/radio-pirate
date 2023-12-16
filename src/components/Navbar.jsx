@@ -3,7 +3,7 @@ import NavbarItem from "./NavbarItem";
 const radios = [
   { name: "water_lily.mp3", url: "water" },
   { name: "tamagucci.ogg", url: "tamagucci" },
-  { name: "ok.wav", url: "ok" },
+  { name: "wallet", url: "wallet" },
 ];
 
 export default function Navbar() {
