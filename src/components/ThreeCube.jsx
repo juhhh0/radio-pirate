@@ -16,7 +16,7 @@ const Cube = () => {
           cubeRef.current.rotation.x += 0.01;
           cubeRef.current.rotation.y += 0.01;
           break;
-        case "ok":
+        case "wallet":
           cubeRef.current.rotation.z += 0.01;
           cubeRef.current.rotation.y -= 0.01;
           break;
